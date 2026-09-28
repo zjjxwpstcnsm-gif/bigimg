@@ -1,0 +1,45 @@
+{
+  "name": "bigimg",
+  "version": "1.0.0",
+  "description": "Private, local AI image super-resolution in your browser",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "lint": "tsc --noEmit && eslint src tests",
+    "test": "vitest run",
+    "build": "node scripts/copy-runtime.mjs && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:e2e": "playwright test",
+    "models:fetch": "node scripts/fetch-models.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjjxwpstcnsm-gif/bigimg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/zjjxwpstcnsm-gif/bigimg/issues"
+  },
+  "homepage": "https://github.com/zjjxwpstcnsm-gif/bigimg#readme",
+  "dependencies": {
+    "onnxruntime-web": "^1.30.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "agent-browser": "^0.38.1",
+    "eslint": "^10.11.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  },
+  "private": true
+}

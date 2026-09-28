@@ -1,0 +1,113 @@
+[
+  {
+    "test": "nomos-weak: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2546,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-weak\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.23 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "nomos-standard: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2561,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-standard\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.45 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "nomos-strong: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2627,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-strong\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.44 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "clearreality: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2470,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"clearreality\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.21 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "realesrgan-x2: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 10459,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"realesrgan-x2\",\"metrics\":\"64 × 64 → 128 × 128 · CPU / WASM · Tile 64 · 9.74 s\",\"alpha\":{\"width\":128,\"height\":128,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "realesrgan-x4: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 23516,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"realesrgan-x4\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 21.99 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "remacri: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 22487,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"remacri\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 21.80 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "ultrasharp: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 23493,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"ultrasharp\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 22.05 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "nomos-dat: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 42540,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-dat\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 41.54 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ]
+  },
+  {
+    "test": "128px tiles, cache, cancellation and 375px layout",
+    "status": "passed",
+    "durationMs": 3397,
+    "attachments": []
+  },
+  {
+    "test": "default backend feature detection is honest",
+    "status": "passed",
+    "durationMs": 4124,
+    "attachments": []
+  }
+]

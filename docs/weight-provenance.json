@@ -1,0 +1,23 @@
+[
+  {
+    "id": "realesrgan-x2",
+    "pthSha256": "49fafd45f8fd7aa8d31ab2a22d14d91b536c34494a5cfe31eb5d89c2fa266abb",
+    "sourceTensors": 702,
+    "onnxInitializers": 702,
+    "exactWeightMatches": 702
+  },
+  {
+    "id": "realesrgan-x4",
+    "pthSha256": "4fa0d38905f75ac06eb49a7951b426670021be3018265fd191d2125df9d682f1",
+    "sourceTensors": 702,
+    "onnxInitializers": 702,
+    "exactWeightMatches": 702
+  },
+  {
+    "id": "remacri",
+    "pthSha256": "e1a73bd89c2da1ae494774746398689048b5a892bd9653e146713f9df8bca86a",
+    "sourceTensors": 702,
+    "onnxInitializers": 702,
+    "exactWeightMatches": 702
+  }
+]

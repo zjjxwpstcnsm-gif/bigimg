@@ -1,0 +1,17 @@
+[
+  {
+    "test": "WebGPU adapter probe and real inference when available",
+    "status": "passed",
+    "durationMs": 49414,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\",\"device\":\"\",\"description\":\"\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "64 × 64 → 256 × 256 · WebGPU · Tile 192 · 47.14 s"
+      }
+    ]
+  }
+]

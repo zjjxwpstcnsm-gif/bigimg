@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.cache/
+playwright-report/
+test-results/
+*.log
+.venv/
+public/models/*.onnx
+
+public/runtime/*
+
+docs/*preview.png
