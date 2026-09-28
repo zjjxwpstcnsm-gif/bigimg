@@ -28,6 +28,7 @@ export default function App() {
     [metrics, setMetrics] = useState("");
   const worker = useRef<Worker | null>(null),
     token = useRef(0),
+    controller = useRef<AbortController | null>(null),
     resultCanvas = useRef<HTMLCanvasElement | null>(null),
     urls = useRef<string[]>([]),
     viewport = useRef<HTMLDivElement>(null),
@@ -59,6 +60,7 @@ export default function App() {
       }
     })();
     return () => {
+      controller.current?.abort();
       worker.current?.terminate();
       urls.current.forEach(URL.revokeObjectURL);
     };
@@ -139,6 +141,9 @@ export default function App() {
   }
   function cancel() {
     token.current++;
+    controller.current?.abort();
+    controller.current = null;
+    resetResult();
     worker.current?.terminate();
     worker.current = null;
     setBusy(false);
@@ -152,6 +157,9 @@ export default function App() {
     setDetail("");
     setBusy(true);
     const version = ++token.current;
+    const abort = new AbortController();
+    controller.current = abort;
+    setProgress({ stage: "Preparing image · 准备图片", percent: 0 });
     try {
       guardSize(source.naturalWidth, source.naturalHeight, model.scale);
       const job: Job = {
@@ -209,12 +217,16 @@ export default function App() {
           setBusy(false);
           void refreshCache();
         } catch (e) {
+          if (version !== token.current) return;
           setError("输出编码失败，请使用较小图片。");
           setDetail(String(e));
           setBusy(false);
         } finally {
-          worker.current?.terminate();
-          worker.current = null;
+          if (version === token.current) {
+            worker.current?.terminate();
+            worker.current = null;
+            controller.current = null;
+          }
         }
       };
       if (typeof Worker !== "undefined") {
@@ -239,6 +251,7 @@ export default function App() {
             job,
             (m) => void handle(m),
             () => version !== token.current,
+            abort.signal,
           );
         } catch (e) {
           await handle({

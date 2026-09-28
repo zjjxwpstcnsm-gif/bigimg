@@ -1,9 +1,21 @@
 export const CACHE = "bigimg-models-v1";
+async function validHash(bytes: Uint8Array, hash: string) {
+  const digest = Array.from(
+    new Uint8Array(
+      await crypto.subtle.digest("SHA-256", new Uint8Array(bytes)),
+    ),
+  )
+    .map((v) => v.toString(16).padStart(2, "0"))
+    .join("");
+  return digest === hash;
+}
 export async function loadModel(
   url: string,
   hash: string,
   progress: (percent: number, note?: string) => void,
+  signal?: AbortSignal,
 ): Promise<Uint8Array> {
+  signal?.throwIfAborted();
   let cache: Cache | undefined;
   try {
     cache = await caches.open(CACHE);
@@ -12,10 +24,16 @@ export async function loadModel(
   }
   const cached = await cache?.match(url);
   if (cached) {
-    progress(100, "已缓存 · Cached");
-    return new Uint8Array(await cached.arrayBuffer());
+    const bytes = new Uint8Array(await cached.arrayBuffer());
+    signal?.throwIfAborted();
+    if (await validHash(bytes, hash)) {
+      progress(100, "已缓存 · Cached");
+      return bytes;
+    }
+    await cache?.delete(url);
+    progress(0, "旧版本或损坏的模型缓存已清理，正在重新下载。");
   }
-  const response = await fetch(url, { credentials: "omit" });
+  const response = await fetch(url, { credentials: "omit", signal });
   if (!response.ok) throw new Error(`模型下载失败 HTTP ${response.status}`);
   const total = Number(response.headers.get("content-length"));
   const reader = response.body?.getReader(),
@@ -38,12 +56,8 @@ export async function loadModel(
     bytes.set(chunk, offset);
     offset += chunk.length;
   }
-  const digest = Array.from(
-    new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)),
-  )
-    .map((v) => v.toString(16).padStart(2, "0"))
-    .join("");
-  if (digest !== hash)
+  signal?.throwIfAborted();
+  if (!(await validHash(bytes, hash)))
     throw new Error("模型完整性校验失败，请清理缓存后重试。");
   try {
     await cache?.put(

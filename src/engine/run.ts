@@ -7,6 +7,7 @@ export async function run(
   job: Job,
   send: (message: EngineMessage) => void,
   cancelled: () => boolean = () => false,
+  signal?: AbortSignal,
 ) {
   const started = performance.now(),
     model = models.find((m) => m.id === job.modelId);
@@ -24,8 +25,10 @@ export async function run(
     modelAddress(model, job.baseUrl),
     model.sha256,
     (p, n) => progress("Downloading model · 下载模型", p, n ? { note: n } : {}),
+    signal,
   );
   const check = () => {
+    signal?.throwIfAborted();
     if (cancelled()) throw new Error("已取消");
   };
   check();

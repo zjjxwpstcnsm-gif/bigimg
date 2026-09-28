@@ -1,0 +1,14 @@
+[
+  {
+    "test": "odd upload, 4x-to-2x, no-Worker fallback, export formats and real tile seams",
+    "status": "passed",
+    "durationMs": 18331,
+    "attachments": [
+      {
+        "name": "seam-metrics",
+        "text": "{\"mae\":0,\"max\":0,\"seamMae\":0,\"halo\":24,\"input\":\"129x97\",\"backend\":\"WASM\",\"model\":\"nomos-standard\"}"
+      }
+    ],
+    "errors": []
+  }
+]

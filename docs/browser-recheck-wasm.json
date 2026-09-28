@@ -1,0 +1,131 @@
+[
+  {
+    "test": "corrupt cache is replaced and real AI inference completes",
+    "status": "passed",
+    "durationMs": 4172,
+    "attachments": [],
+    "errors": []
+  },
+  {
+    "test": "nomos-weak: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2553,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-weak\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.26 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "nomos-standard: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2576,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-standard\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.28 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "nomos-strong: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2514,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-strong\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.29 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "clearreality: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 2577,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"clearreality\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 1.42 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "realesrgan-x2: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 11587,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"realesrgan-x2\",\"metrics\":\"64 × 64 → 128 × 128 · CPU / WASM · Tile 64 · 10.27 s\",\"alpha\":{\"width\":128,\"height\":128,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "realesrgan-x4: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 25623,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"realesrgan-x4\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 24.42 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "remacri: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 23612,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"remacri\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 22.86 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "ultrasharp: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 23574,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"ultrasharp\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 22.82 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "nomos-dat: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 42675,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"nomos-dat\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 41.21 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "128px tiles, cache, cancellation and 375px layout",
+    "status": "passed",
+    "durationMs": 3459,
+    "attachments": [],
+    "errors": []
+  },
+  {
+    "test": "default backend feature detection is honest",
+    "status": "passed",
+    "durationMs": 2151,
+    "attachments": [],
+    "errors": []
+  }
+]

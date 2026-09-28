@@ -14,7 +14,7 @@ Deployment target: **https://zjjxwpstcnsm-gif.github.io/bigimg/** (publication s
 - 2× and 4× output; native 2× is explicitly distinguished from AI 4× followed by high-quality browser downsampling.
 - Alpha is resized separately and recombined using `destination-in`. JPEG explicitly flattens on white.
 - Fit/100%/zoom/pan, Before/After slider, PNG/JPEG/WebP download and quality control.
-- Model Cache Storage status and clear-cache action. If cache storage is unavailable or full, inference can continue without persistent cache.
+- Model Cache Storage status and clear-cache action. Cached weights are rechecked against the current hash and repaired when stale/corrupt. If cache storage is unavailable or full, inference can continue without persistent cache.
 - Responsive layout and system dark/light appearance. No external fonts, accounts, analytics or inference service.
 
 ## Local development
@@ -44,7 +44,7 @@ Playwright uses the real production build, real ONNX files, and browser WASM. No
 
 React + TypeScript + Vite → local image decode → module Web Worker → ONNX Runtime Web WebGPU/WASM session → padded tile inference → crop/merge → local alpha compositing and optional 4×→2× downsample → local encoding/download.
 
-All image data stays in browser memory. The main thread decodes and encodes using Canvas, which works without OffscreenCanvas. The heavy inference, tensor packing and merge loops run in a worker. Browsers without Worker use a cooperative main-thread fallback; that fallback is not a performance promise and is not yet separately validated.
+All image data stays in browser memory. The main thread decodes and encodes using Canvas, which works without OffscreenCanvas. The heavy inference, tensor packing and merge loops run in a worker. Browsers without Worker use a cooperative main-thread fallback; that fallback is not a performance promise and is covered by the odd-dimension browser pipeline test.
 
 ## Models and licenses
 
@@ -76,6 +76,8 @@ Vite base is `/bigimg/`. WASM binaries are copied from the **same installed ORT 
 
 `.github/workflows/pages.yml` runs `npm ci`, lint, unit tests, pinned model download/checks, build, `configure-pages@v5`, `upload-pages-artifact@v3`, `deploy-pages@v4`. It runs on main pushes and workflow dispatch with `contents: read`, `pages: write`, `id-token: write`, and environment `github-pages`.
 
+After deployment, a separate `verify-live` job runs all nine WASM model tests plus image pipeline/cache recovery checks against the public URL and uploads browser evidence. A green build alone is not online acceptance.
+
 Repository **Settings → Pages → Build and deployment → Source → GitHub Actions** must be enabled. The normal `GITHUB_TOKEN` does not grant repository administration rights to enable Pages itself.
 
 The approximately 350 MiB model collection plus runtime assets fits a Pages artifact without putting large binaries into Git. Browsers fetch models from the **same Pages origin**, avoiding Google Drive browser CORS problems. Build-time downloads may use external author/mirror sources; they contain model weights only. Deployment fails rather than silently serving a missing or changed model.
@@ -88,7 +90,7 @@ The production app has no upload code, remote inference API, analytics or image 
 
 `navigator.gpu` is checked, and actual session creation/run can still fail despite presence of that property. Failures explicitly select CPU/WASM and change the displayed backend. WASM uses one thread. Backend initialization is not a claim that every model runs on every GPU.
 
-See `docs/ACCEPTANCE.md` for measured browser/model outcomes. Chrome, Edge, Safari, Android and iOS are **not interchangeable**: only tested versions count. Physical GPU/mobile/Safari tests are outstanding unless recorded there. Chromium emulation is a layout test, not an Android or iOS device test.
+See `docs/ACCEPTANCE.md` and `docs/RECHECK.md` for measured browser/model outcomes. Chrome, Edge, Safari, Android and iOS are **not interchangeable**: only tested versions count. Physical GPU/mobile/Safari tests are outstanding unless recorded there. Chromium emulation is a layout test, not an Android or iOS device test.
 
 ## Tile and memory limitations
 

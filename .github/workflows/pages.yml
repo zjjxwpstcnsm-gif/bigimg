@@ -34,7 +34,7 @@ jobs:
       - run: npm run models:fetch
       - run: npm run build
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e -- e2e/smoke.spec.ts
+      - run: npm run test:e2e -- e2e/smoke.spec.ts e2e/pipeline.spec.ts e2e/cache-recovery.spec.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -54,3 +54,26 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  verify-live:
+    name: Verify deployed Pages with real browser inference
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Test all nine models on the public site
+        env:
+          BASE_URL: https://zjjxwpstcnsm-gif.github.io/bigimg/
+        run: npm run test:e2e -- e2e/smoke.spec.ts e2e/pipeline.spec.ts e2e/cache-recovery.spec.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-live-evidence
+          path: test-results/
