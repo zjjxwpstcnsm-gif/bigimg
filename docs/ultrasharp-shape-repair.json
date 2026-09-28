@@ -1,0 +1,13 @@
+{
+  "model": "ultrasharp",
+  "originalSha256": "c83e0bf4fe1051ec7f2330614aa2edef0ad589d59c718934897a93459b180dd1",
+  "preparedSha256": "1d7142af88176565f1af86a87ce2e10ed46a673c76e2b6cf5561a441be730b67",
+  "bytes": 67002809,
+  "initializerCount": 0,
+  "allInitializerBytesUnchanged": true,
+  "allOperatorBytesUnchanged": true,
+  "change": "Rename output spatial dim_param height/width to output_height/output_width",
+  "trigger": "WebGPU Shape mismatch attempting to re-use buffer {1,112,112,3} != {1,448,448,3}",
+  "embeddedConstantTensorCount": 796,
+  "unchangedGraphNodeCount": 1889
+}

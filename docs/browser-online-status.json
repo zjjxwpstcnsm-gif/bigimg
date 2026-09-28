@@ -1,0 +1,9 @@
+{
+  "checkedOn": "2026-09-28",
+  "browser": "Playwright Chromium 141.0.7390.37",
+  "url": "https://zjjxwpstcnsm-gif.github.io/bigimg/",
+  "httpStatus": 404,
+  "pageTitle": "Site not found · GitHub Pages",
+  "onlineInference": "NOT TESTED: repository Pages not enabled",
+  "network": "Configured environment proxy required for external navigation"
+}

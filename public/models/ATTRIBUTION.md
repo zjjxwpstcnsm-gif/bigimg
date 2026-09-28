@@ -13,7 +13,7 @@ Full license terms are in ../licenses/. Source URLs, download URLs, sizes,
 versions and SHA-256 are in ../../src/models/manifest.json in the GitHub repository.
 The website's Models & Licenses table links each original model page.
 
-Changes: SPAN and DAT output shape metadata uses distinct spatial symbol names to fix ONNX Runtime WebGPU buffer reuse. No weights or operators changed. Original and prepared SHA-256 are both in the manifest. RealESRGAN and Remacri ONNX
+Changes: SPAN, UltraSharp and DAT output shape metadata uses distinct spatial symbol names to fix ONNX Runtime WebGPU buffer reuse. No weights or operators changed. Original and prepared SHA-256 are both in the manifest. RealESRGAN and Remacri ONNX
 conversions are mirrored by huggingworld; all 702 weight tensors in each were
 verified byte-for-byte against the original PTH distribution. DAT mirror has
 the exact SHA-256 recorded by OpenModelDB. Do not infer model licensing from

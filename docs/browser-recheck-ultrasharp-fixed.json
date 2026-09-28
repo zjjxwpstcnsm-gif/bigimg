@@ -1,0 +1,37 @@
+[
+  {
+    "test": "corrupt cache is replaced and real AI inference completes",
+    "status": "passed",
+    "durationMs": 4163,
+    "attachments": [],
+    "errors": []
+  },
+  {
+    "test": "ultrasharp: real WASM inference, alpha, dimensions and download",
+    "status": "passed",
+    "durationMs": 24596,
+    "attachments": [
+      {
+        "name": "metrics",
+        "text": "{\"id\":\"ultrasharp\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 22.93 s\",\"alpha\":{\"width\":256,\"height\":256,\"cornerAlpha\":0,\"opaqueAlpha\":255},\"errors\":[],\"failed\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "ultrasharp: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 286263,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"ultrasharp\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 284.72 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  }
+]

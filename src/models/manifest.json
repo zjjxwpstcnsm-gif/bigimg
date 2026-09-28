@@ -18,7 +18,7 @@
     "bytes": 1718961,
     "sha256": "a51ed6538c188361da2c6001deb7b30df2620ca5932cfc6a40947fdab5e293f5",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -44,7 +44,7 @@
     "bytes": 1718961,
     "sha256": "2e29e4979adf47ec7f5a05b3a0a7765ce4419c43e0e2c95cba0dd06e2e92f9c5",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -70,7 +70,7 @@
     "bytes": 1718961,
     "sha256": "f66e90f7bc272709e84865d6b6006a6b9808d1758cf399e53a5f08d9ba8bbaaa",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -96,7 +96,7 @@
     "bytes": 1718961,
     "sha256": "283b25be60145a1c052c579663391ca88b58e76d2b4d8cec75b5ddfe559eb234",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -122,7 +122,7 @@
     "bytes": 67191666,
     "sha256": "c4c0b7430ebb554f3939a720f9e8445fdeca3d15edb69979c7ace39b997f3483",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -147,7 +147,7 @@
     "bytes": 67167471,
     "sha256": "cd0ec097469c94c903e6f74d4f43f545683250ec0a54bc0c2ab1ff4c6364d8da",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -172,7 +172,7 @@
     "bytes": 67167471,
     "sha256": "77a7cc6dc7eede28424c2ca2b3bc67aa5c0d8ce31379245e0e4ff91c10ebe49b",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
@@ -194,21 +194,22 @@
     "originalUrl": "https://huggingface.co/Kim2091/UltraSharp/resolve/920fe218c211f831b43cb30327f203e2b59f5dab/ONNX/4x-UltraSharp-fp32-opset17.onnx",
     "commercialUse": false,
     "attribution": true,
-    "bytes": 67002795,
-    "sha256": "c83e0bf4fe1051ec7f2330614aa2edef0ad589d59c718934897a93459b180dd1",
+    "bytes": 67002809,
+    "sha256": "1d7142af88176565f1af86a87ce2e10ed46a673c76e2b6cf5561a441be730b67",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "PASS: Chromium 141 SwiftShader SOFTWARE adapter, 64×64; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": false,
-    "originalSha256": "c83e0bf4fe1051ec7f2330614aa2edef0ad589d59c718934897a93459b180dd1"
+    "originalSha256": "c83e0bf4fe1051ec7f2330614aa2edef0ad589d59c718934897a93459b180dd1",
+    "transform": "unique-output-dimensions"
   },
   {
     "id": "nomos-dat",
     "name": "High Quality",
     "zhName": "高质量实验",
     "technicalName": "4xNomos8kDAT",
-    "description": "高级实验模型，约 86 MiB；可能超出设备内存。",
+    "description": "高级实验模型，约 86 MiB。软件 WebGPU 测试超时；若长时间无进展，请取消后选 CPU / WASM。",
     "architecture": "DAT",
     "scale": 4,
     "license": "CC-BY-4.0",
@@ -222,7 +223,7 @@
     "bytes": 89983284,
     "sha256": "cec0f386234c35e7deff8feb3e84e76f914e992be5875542b231e1420123e6ad",
     "runtime": {
-      "webgpu": "NOT TESTED",
+      "webgpu": "FAIL: Chromium 141 SwiftShader 360s test timeout; physical GPU NOT TESTED",
       "wasm": "PASS: Chromium 141, 64×64 smoke"
     },
     "experimental": true,

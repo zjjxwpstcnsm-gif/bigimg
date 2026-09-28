@@ -1,0 +1,155 @@
+[
+  {
+    "test": "nomos-weak: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 15979,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"nomos-weak\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 13.89 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "nomos-standard: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 15124,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"nomos-standard\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 13.05 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "nomos-strong: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 14695,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"nomos-strong\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 13.21 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "clearreality: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 14719,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"clearreality\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 13.27 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "realesrgan-x2: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 83078,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"realesrgan-x2\",\"metrics\":\"64 × 64 → 128 × 128 · WebGPU · Tile 64 · 81.57 s\",\"warnings\":[\"\\u001b[0;93m2026-09-28 10:59:09.599700 [W:onnxruntime:, session_state.cc:1397 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.\\u001b[m\",\"\\u001b[0;93m2026-09-28 10:59:09.603900 [W:onnxruntime:, session_state.cc:1399 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.\\u001b[m\"]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "realesrgan-x4: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 283476,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"realesrgan-x4\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 282.43 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "remacri: real WebGPU (software adapter; not hardware certification)",
+    "status": "passed",
+    "durationMs": 287278,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"remacri\",\"metrics\":\"64 × 64 → 256 × 256 · WebGPU · Tile 64 · 285.50 s\",\"warnings\":[]}"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "test": "ultrasharp: real WebGPU (software adapter; not hardware certification)",
+    "status": "failed",
+    "durationMs": 257311,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      },
+      {
+        "name": "gpu-result",
+        "text": "{\"id\":\"ultrasharp\",\"metrics\":\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 28.77 s\",\"warnings\":[\"WebGPU initialization/inference failed; CPU fallback: Error: failed to call OrtRun(). ERROR_CODE: 1, ERROR_MESSAGE: /mnt/azure_nvme_temp/_work/1/s/onnxruntime/core/framework/op_kernel.cc:83 virtual OrtValue *onnxruntime::OpKernelContext::OutputMLValue(int, const TensorShape &) [ONNXRuntimeError] : 1 : FAIL : Shape mismatch attempting to re-use buffer. {1,112,112,3} != {1,448,448,3}. Validate usage of dim_value (values should be > 0) and dim_param (all values with the same string should equate to the same size) in shapes in the model.\\n\"]}"
+      }
+    ],
+    "errors": [
+      {
+        "location": {
+          "file": "/workspace/scratch/b17ecb93545d/bigimg/e2e/webgpu.spec.ts",
+          "column": 23,
+          "line": 71
+        },
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"WebGPU\"\u001b[39m\nReceived string:    \u001b[31m\"64 × 64 → 256 × 256 · CPU / WASM · Tile 64 · 28.77 s\"\u001b[39m\n\n  69 |         contentType: \"application/json\",\n  70 |       });\n> 71 |       expect(metrics).toContain(\"WebGPU\");\n     |                       ^\n  72 |       expect(metrics).toContain(\n  73 |         id === \"realesrgan-x2\" ? \"128 × 128\" : \"256 × 256\",\n  74 |       );\n    at /workspace/scratch/b17ecb93545d/bigimg/e2e/webgpu.spec.ts:71:23"
+      }
+    ]
+  },
+  {
+    "test": "nomos-dat: real WebGPU (software adapter; not hardware certification)",
+    "status": "timedOut",
+    "durationMs": 360004,
+    "attachments": [
+      {
+        "name": "gpu",
+        "text": "{\"gpu\":true,\"adapter\":true,\"info\":{\"vendor\":\"google\",\"architecture\":\"swiftshader\"}}"
+      }
+    ],
+    "errors": [
+      {
+        "message": "\u001b[31mTest timeout of 360000ms exceeded.\u001b[39m"
+      }
+    ]
+  }
+]

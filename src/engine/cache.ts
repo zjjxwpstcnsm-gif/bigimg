@@ -1,9 +1,7 @@
 export const CACHE = "bigimg-models-v1";
-async function validHash(bytes: Uint8Array, hash: string) {
+async function validHash(bytes: Uint8Array<ArrayBuffer>, hash: string) {
   const digest = Array.from(
-    new Uint8Array(
-      await crypto.subtle.digest("SHA-256", new Uint8Array(bytes)),
-    ),
+    new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)),
   )
     .map((v) => v.toString(16).padStart(2, "0"))
     .join("");

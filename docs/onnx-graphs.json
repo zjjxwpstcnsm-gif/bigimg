@@ -346,7 +346,7 @@
   },
   {
     "id": "ultrasharp",
-    "sha256": "c83e0bf4fe1051ec7f2330614aa2edef0ad589d59c718934897a93459b180dd1",
+    "sha256": "1d7142af88176565f1af86a87ce2e10ed46a673c76e2b6cf5561a441be730b67",
     "opset": 17,
     "inputs": [
       {
@@ -366,8 +366,8 @@
         "shape": [
           "batch_size",
           3,
-          "height",
-          "width"
+          "output_height",
+          "output_width"
         ],
         "dtype": 1
       }
